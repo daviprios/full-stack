@@ -1,0 +1,28 @@
+{
+	"name": "back",
+	"version": "1.0.0",
+	"main": "./src/index.ts",
+	"scripts": {
+		"dev": "ts-node-dev --respawn --debounce 1000 ./src/index.ts",
+		"build": "tsup",
+		"preview": "node ./dist/index.js"
+	},
+	"author": "daviprios",
+	"devDependencies": {
+		"@types/cors": "^2.8.17",
+		"@types/express": "^4.17.21",
+		"ts-node-dev": "^2.0.0",
+		"tsconfig-paths": "^4.2.0",
+		"tsup": "^8.0.2",
+		"tsx": "^4.7.1",
+		"typescript": "^5.3.3",
+		"zod-prisma": "^0.5.4"
+	},
+	"dependencies": {
+		"@prisma/client": "^5.10.2",
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"prisma": "^5.10.2",
+		"zod": "^3.22.4"
+	}
+}

@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator zod {
+  provider              = "zod-prisma"
+  output                = "../src/schema"
+  relationModel         = true
+  modelCase             = "cascalCase"
+  modelSuffix           = "Model"
+  useDecimalJs          = true
+  prismaJsonNullability = true
+}
+
+model Contact {
+  id                     String  @id @default(uuid())
+  name                   String
+  phoneNumber            String
+  alternativePhoneNumber String?
+  email                  String?
+
+  addressCountry      String
+  addressState        String
+  addressNeighborhood String
+  addressZipCode      String
+  addressStreetName   String
+  addressStreetNumber String
+  addressComplement   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+}
