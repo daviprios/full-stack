@@ -15,7 +15,7 @@ export const agendaController = {
 
 		const contacts = agendaDAL.listContacts(filterParse.data)
 
-		res.status(constants.HTTP_STATUS_BAD_REQUEST).send(contacts)
+		res.status(constants.HTTP_STATUS_OK).send(contacts)
 	},
 
 	createContact(req: Request, res: Response) {
@@ -27,7 +27,7 @@ export const agendaController = {
 
 		const contact = agenda.data
 		const databaseContact = agendaDAL.createContact(contact)
- 
+
 		res.status(constants.HTTP_STATUS_CREATED).send(databaseContact)
 	},
 
